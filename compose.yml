@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  sales-core:
+    image: mysql:8
+    container_name: sales-core
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bodega_don_carlos_db
+      MYSQL_USER: sales
+      MYSQL_PASSWORD: sales123
+    ports:
+      - 3308:3306
+    networks:
+      - net-sales-core
+    volumes:
+      - sales-core-mysql-vol:/var/lib/mysql
+networks:
+  net-sales-core:
+    driver: bridge
+volumes:
+  sales-core-mysql-vol:
