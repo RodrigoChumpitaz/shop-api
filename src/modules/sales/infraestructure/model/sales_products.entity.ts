@@ -2,6 +2,7 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
 import { SaleEntity } from './sale.entity';
 import { ProductEntity } from '@products/infraestructure/model/product.entity';
 import { BaseEntity } from '@core/infraestructure.ts/base-entity';
+import { getSlug } from '@core/services/generateSlug';
 
 @Entity('sales_products')
 export class Sales_Products extends BaseEntity {
@@ -20,4 +21,9 @@ export class Sales_Products extends BaseEntity {
 
     @Column({ type: 'float', nullable: false })
     mount: number;
+
+    constructor(){
+        super();
+        this.slug = getSlug();
+    }
 }

@@ -37,6 +37,3 @@ export class SaleEntity extends BaseEntity{
     @OneToMany(() => Sales_Products, sales => sales.saleId)
     sales_products: Sales_Products[]
 }
-const generateSaleCode = (length: number) => {
-    return length.toString().padStart(6, '0');
-}

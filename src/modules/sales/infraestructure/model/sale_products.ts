@@ -6,10 +6,10 @@ export type SalesProductsInsert = {
 }
 export class SalesProducts {
     saleId: string;
-    producId: string
+    productId: string
     quantity: number;
     mount: number;
-    constructor(properties: SalesProductsInsert){
-        Object.assign(this, properties);
-    }
+    // constructor(properties: SalesProductsInsert){
+    //     Object.assign(this, properties);
+    // }
 }

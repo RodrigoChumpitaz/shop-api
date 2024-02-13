@@ -1,19 +1,20 @@
 import { getSlug } from '@core/services/generateSlug';
-import { Product } from '@products/domain/product.domain';
+import { SalesProducts } from '@sale/infraestructure/model/sale_products';
+
 
 export interface SaleOptionals {
     readonly id: string;
     readonly saleCode: string;
     readonly slug: string;
+    readonly subTotal: number;
+    readonly total: number;
     readonly createdAt: Date;
     readonly updatedAt: Date;
     readonly disabledAt: Date;
 }
 export interface SaleRequireds {
-    readonly subTotal: number;
-    readonly total: number;
     readonly discount: number;
-    readonly products: Product[];
+    readonly sales_products: SalesProducts[];
 }
 
 export type SaleProperties = Partial<SaleOptionals> | SaleRequireds;
@@ -24,7 +25,7 @@ export class Sale {
     subTotal: number;
     total: number;
     discount: number;
-    products: Product[];
+    sales_products: SalesProducts[];
     slug: string;
     createdAt: Date;
     updatedAt: Date;
@@ -42,7 +43,7 @@ export class Sale {
             subTotal: this.subTotal,
             total: this.total,
             discount: this.discount,
-            products: this.products,
+            sales_products: this.sales_products,
             slug: this.slug,
             createdAt: this.createdAt,
             updatedAt: this.updatedAt,

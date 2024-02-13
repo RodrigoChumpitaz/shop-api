@@ -1,51 +1,60 @@
-# Base Node Project
-Estructura base para proyectos de node con typescript
+# API de Gestión de Ventas y Reportes para Tiendas Pequeñas
 
-## Características Principales
+Este proyecto es una API encargada de gestionar las ventas y generar reportes para tiendas pequeñas.
 
-- **Express:** Framework de Node.js para construir aplicaciones web y APIs.
-- **ESLint:** Herramienta para identificar y arreglar patrones de código problemáticos.
-- **Babel:** Transpilador de JavaScript para compatibilidad con versiones anteriores y características avanzadas.
-- **Prettier:** Formateador de código para mantener un estilo consistente.
+## Características
 
-## Requisitos Previos
+- Registro de ventas
+- Generación de reportes de ventas
+- Gestión de productos y stock
+- Gestión de clientes
+- Autenticación y autorización de usuarios
 
-Asegúrate de tener instalado [Node.js](https://nodejs.org/) en tu máquina.
+## Requisitos
 
-## Configuración
+- Node.js (versión 20.10.0)
+- Mysql (versión 8.00)
 
-1. Clona o haz un fork del repositorio:
+## Instalación
 
+1. Clona este repositorio:
    ```bash
-   git clone https://github.com/RodrigoChumpitaz/base-express-project
-   git fork https://github.com/usuario-original/proyecto-base-express.git
-   cd base-express-project
-   npm i
-## Scripts disponibles
-
-- **build:** Transpila el código con Babel.
-- **start:** Ejecuta el código transpilado en modo PROD
-- **dev:** Inicia el servidor en modo de desarrollo.
-
-## Estructura del proyecto
-   ```bash
-      ├── .eslintrc.json
-      ├── .gitignore
-      ├── .nvmrc
-      ├── .prettierrc
-      ├── babel.config.js
-      ├── build/
-      ├── package.json
-      ├── README.md
-      ├── src/
-      │   ├── index.ts
-      └── tsconfig.json
+   git clone [https://github.com/RodrigoChumpitaz/shop-api](https://github.com/RodrigoChumpitaz/shop-api)
    ```
-## Nota
-Después de clonar o hacer fork del repositorio, puedes eliminar el historial de Git existente y comenzar un nuevo repositorio con estos pasos:
-```bash
-      rm -rf .git
-      git init
-      git add .
-      git commit -m "Initial commit"
-   ```
+# Shop API
+
+## Description
+
+Este proyecto es una API diseñeada para gestionar las ventas y generar reportes para tiendas.
+
+## Features
+
+- Gestión de ventas: La API permite a los usuarios crear, actualizar y eliminar registros de ventas.
+- Informes: los usuarios pueden generar varios informes basados ​​en datos de ventas, como informes de ventas diarios, semanales o mensuales.
+- Autenticación de usuario: la API proporciona autenticación de usuario para garantizar un acceso seguro al sistema.
+- Gestión de la tienda: los usuarios pueden gestionar la información de la tienda, como el nombre, la dirección y los datos de contacto de la tienda.
+
+## Installation
+
+1. Clona el repositorio.
+2. Instale las dependencias requeridas usando `npm install`.
+3. Configure la conexión de la base de datos en el archivo `.env.development`.
+4. Ejecute la API usando `npm start`.
+
+## Usage
+
+1. Realice solicitudes a los puntos finales de la API utilizando herramientas como Postman o cURL.
+2. Consulte la documentación de la API para obtener información detallada sobre los puntos finales disponibles y los formatos de solicitud/respuesta.
+
+## Contributing
+
+
+¡Las contribuciones son bienvenidas! Si encuentra algún problema o tiene sugerencias para mejorar, abra un problema o envíe una solicitud de extracción.
+
+## License
+
+Este proyecto está licenciado bajo la [MIT License](LICENSE).
+
+## Contact
+
+Para cualquier consulta o pregunta, por favor contacte [chumpitazr130@gmail.com](mailto:chumpitazr130@gmail.com).

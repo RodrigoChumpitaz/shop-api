@@ -1,34 +1,23 @@
-import { Product } from '@products/domain/product.domain';
+import { SalesProducts } from '@sale/infraestructure/model/sale_products';
 import { Sale, SaleProperties } from './sale.domain';
 
 interface SaleInsertProps {
-    subTotal: number;
-    total: number;
-    discount: number;
-    products: Product[];
+    discount?: number;
+    sales_products: SalesProducts[];
 }
 export class SaleFactory {
     static registerSale({
-        subTotal,
-        total,
         discount,
-        products
+        sales_products
     }: SaleInsertProps): Sale {
-        if (subTotal <= 0) {
-            throw new Error('El subtotal debe ser mayor a 0');
-        }
-        if (total <= 0) {
-            throw new Error('El total debe ser mayor a 0');
-        }
-
-        if (discount < 0) {
+        if (discount! < 0) {
             throw new Error('El descuento no puede ser negativo');
         }
         const properties: SaleProperties = {
-            subTotal,
-            total,
-            discount,
-            products
+            // subTotal,
+            // total,
+            discount: discount!,
+            sales_products
         };
         return new Sale(properties);
     }

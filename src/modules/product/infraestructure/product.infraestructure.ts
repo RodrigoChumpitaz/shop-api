@@ -25,7 +25,7 @@ export class ProductInfraestructure implements ProductRepository {
             const dbRepository =
                 DatabaseBootstrap.AppDataSource.getRepository(ProductEntity);
             const newProduct = dbRepository.create(product);
-            // await dbRepository.save(newProduct);
+            await dbRepository.save(newProduct);
             return ProductModelDto.fromDataToApplicationOne(newProduct);
         } catch (error) {
             return new Error(error);

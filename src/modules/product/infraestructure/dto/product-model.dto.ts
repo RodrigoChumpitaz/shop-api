@@ -20,7 +20,6 @@ export class ProductModelDto {
             products,
             IProductListOrigin
         );
-        console.log(_products);
         return _products.map((product) => {
             return {
                 id: product.id,
