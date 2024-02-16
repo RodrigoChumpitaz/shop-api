@@ -9,13 +9,24 @@ module.exports = {
             '@babel/preset-env',
             {
                 targets: {
+                    esmodules: false,
                     node: 'current'
                 }
             }
         ],
-        '@babel/preset-typescript'
+        '@babel/preset-typescript',
+        '@babel/preset-flow'
     ],
     plugins: [
+        '@babel/plugin-transform-modules-commonjs',
+        [
+            '@babel/plugin-proposal-decorators',
+            {
+                legacy: true
+            }
+        ],
+        ['@babel/plugin-transform-flow-strip-types'],
+        ['@babel/plugin-proposal-class-properties', {loose: true}],
         [
             'module-resolver',
             {
@@ -26,10 +37,13 @@ module.exports = {
                  * @property {string} alias.'@controllers' - The absolute path for the 'controllers' directory.
                  * @property {string} alias.'@routes' - The absolute path for the 'routes' directory.
                  */
+                root: ['.'],   
                 alias: {
-                    // '@config': './src/config',
-                    // '@controllers': './src/controllers',
-                    // '@routes': './src/routes'
+                    '@category': './src/modules/category',
+                    '@products': './src/modules/product',
+                    '@sale': './src/modules/sales',
+                    '@server': './src/server',
+                    '@core': './src/core'
                 }
             }
         ]

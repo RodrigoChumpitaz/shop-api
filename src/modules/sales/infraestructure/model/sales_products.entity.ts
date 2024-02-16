@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
 import { SaleEntity } from './sale.entity';
 import { ProductEntity } from '@products/infraestructure/model/product.entity';
-import { BaseEntity } from '@core/infraestructure.ts/base-entity';
+import { BaseEntity } from '@core/infraestructure/base-entity';
 import { getSlug } from '@core/services/generateSlug';
 
 @Entity('sales_products')

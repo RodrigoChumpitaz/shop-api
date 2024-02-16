@@ -5,12 +5,14 @@ import { converToType } from '@core/helpers/mapper';
 import { IProductListResultPagingApp } from '../../application/results/product-paging-list-result';
 
 export class ProductModelDto {
-
-    static fromDataToApplicationPaging(products: ProductEntity[], count: number): IProductListResultPagingApp{
+    static fromDataToApplicationPaging(
+        products: ProductEntity[],
+        count: number
+    ): IProductListResultPagingApp {
         return {
             data: ProductModelDto.fromDataToApplication(products),
             count
-        }
+        };
     }
 
     static fromDataToApplication(

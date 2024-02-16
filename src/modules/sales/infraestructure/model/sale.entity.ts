@@ -1,4 +1,4 @@
-import { BaseEntity } from "@core/infraestructure.ts/base-entity";
+import { BaseEntity } from "@core/infraestructure/base-entity";
 import { ProductEntity } from "@products/infraestructure/model/product.entity";
 import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Sales_Products } from "./sales_products.entity";

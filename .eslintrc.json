@@ -25,7 +25,11 @@
                     "module-resolve",
                     {
                         "alias":{
-                            "@category": ["src/modules/category"]
+                            "@category": ["src/modules/category"],
+                            "@product": ["src/modules/product"],
+                            "@sale": ["src/modules/sales"],
+                            "@server": ["src/server"],
+                            "@core": ["src/core"]
                         }
                     }
                 ]

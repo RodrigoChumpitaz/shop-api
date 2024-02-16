@@ -1,6 +1,6 @@
 import env from "@core/env";
 import { IBootstrap } from "@server/bootstrap.interface";
-import { DataSource, EntityTarget, ObjectLiteral, Repository } from "typeorm";
+import { DataSource } from "typeorm";
 
 export class DatabaseBootstrap implements IBootstrap {
     static dbInstance: DataSource;
@@ -9,7 +9,7 @@ export class DatabaseBootstrap implements IBootstrap {
         const dbConfig = env.DB_CONFIG();
         try {
             const dataSource = new DataSource({
-                type: 'mysql',
+                type: 'postgres',
                 ...dbConfig,
                 migrations: [],
                 subscribers: []

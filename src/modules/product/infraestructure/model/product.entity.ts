@@ -1,4 +1,4 @@
-import { BaseEntity } from "@core/infraestructure.ts/base-entity";
+import { BaseEntity } from "@core/infraestructure/base-entity";
 import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { PriceTypeEntity } from "./priceType.entity";
 import { CategoryEntity } from "@category/infraestructure/model/category.entity";
@@ -10,10 +10,10 @@ export class ProductEntity extends BaseEntity{
     @PrimaryGeneratedColumn("uuid")
     id: string;
 
-    @Column({ type: 'nvarchar', length: 150, nullable: false })
+    @Column({ type: 'varchar', length: 150, nullable: false })
     product_name: string;
 
-    @Column({ type: 'nvarchar', length: 200, nullable: true })
+    @Column({ type: 'varchar', length: 200, nullable: true })
     description: string;
 
     @Column({ type: 'float', nullable: false })

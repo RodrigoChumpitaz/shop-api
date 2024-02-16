@@ -1,6 +1,6 @@
 import { ServerBootstrap } from "@server/server.bootstrap";
-import app from "./app";
 import { DatabaseBootstrap } from "@server/database.bootstrap";
+import app from "./app";
 import env from "@core/env";
 
 
