@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import categoryRoutes from '@category/category.routes';
 import productRoutes from '@products/product.routes';
 import salesRoutes from '@sale/sales.routes';
+import cors from 'cors';
 
 class App {
     public app: Application;
@@ -16,6 +17,10 @@ class App {
     middlewares(){
         this.app.use(express.json())
         this.app.use(morgan('combined'))
+        this.app.use(cors({
+            origin: '*',
+            methods: ['GET', 'POST', 'PATCH', 'DELETE', 'PUT', 'OPTIONS'],
+        }))
     }
 
     routes(){
