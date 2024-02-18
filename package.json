@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --extensions \".ts,.js\" --out-dir build --copy-files --root-mode upward",
+    "postbuild": "tspath -f",
     "start": "cross-env NODE_ENV=production node build/index.js",
     "dev": "cross-env NODE_ENV=development ts-node-dev -r tsconfig-paths/register --respawn --ignore-watch node_modules src/index.ts"
   },

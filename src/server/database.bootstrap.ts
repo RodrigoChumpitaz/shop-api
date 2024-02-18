@@ -9,7 +9,7 @@ export class DatabaseBootstrap implements IBootstrap {
         const dbConfig = env.DB_CONFIG();
         try {
             const dataSource = new DataSource({
-                type: 'postgres',
+                type: env.DB_TYPE as any,
                 ...dbConfig,
                 migrations: [],
                 subscribers: []

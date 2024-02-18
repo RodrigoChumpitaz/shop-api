@@ -26,7 +26,7 @@ export default class Environment {
     }
 
     public static get DB_TYPE(): string {
-        return this.env.DB_TYPE!;
+        return this.env.DB_TYPE as string;
     }
 
     public static DB_CONFIG(): IDbConfig {
