@@ -29,6 +29,10 @@ export default class Environment {
         return this.env.DB_TYPE as string;
     }
 
+    public static get MONGO_DB_HOST(): string {
+        return this.env.MONGO_DB_HOST as string;
+    }
+
     public static DB_CONFIG(): IDbConfig {
         return {
             host: this.env.DB_HOST!,
